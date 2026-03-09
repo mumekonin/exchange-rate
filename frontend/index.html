@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BirrConvert — Live Ethiopian Currency Exchange</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Lato:wght@300;400;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-mark">
+            <span class="logo-dot"></span>
+            <span class="logo-dot"></span>
+            <span class="logo-dot"></span>
+          </div>
+          Birr<em>Convert</em>
+        </div>
+        <nav class="header-nav">
+          <a href="#converter">
+            <span class="material-icons-round nav-icon">currency_exchange</span>
+            Converter
+          </a>
+          <a href="#rates">
+            <span class="material-icons-round nav-icon">show_chart</span>
+            Live Rates
+          </a>
+          <a href="#about">
+            <span class="material-icons-round nav-icon">info</span>
+            Why Us
+          </a>
+        </nav>
+          <button class="theme-btn" id="themeBtn" title="Toggle theme">
+            <span class="material-icons-round" id="iconMoon">dark_mode</span>
+            <span class="material-icons-round" id="iconSun" style="display:none">light_mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-label">
+            <span class="material-icons-round" style="font-size:.9rem;vertical-align:middle;">circle</span>
+            Ethiopian Birr · Global Currency Intelligence
+          </div>
+          <h1>Where the Birr<br>Meets the <em>World</em></h1>
+          <p class="hero-desc">
+            Money moves fast — your information should move faster. BirrConvert
+            gives you a real-time window into the Ethiopian Birr's standing against
+            every major world currency. From the dollar corridors of New York to the
+            dirham markets of Dubai, we translate the world's financial pulse into
+            numbers you can act on — instantly, accurately, every single day.
+          </p>
+          <div class="hero-ctas">
+            <a href="#converter" class="btn-primary">
+              <span class="material-icons-round">currency_exchange</span>
+              Convert a Currency
+            </a>
+            <a href="#rates" class="btn-ghost">
+              <span class="material-icons-round">bar_chart</span>
+              Explore Today's Rates
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="etb-card">
+            <span class="material-icons-round etb-main-icon">account_balance</span>
+            <div class="etb-info">
+              <div class="etb-code">ETB</div>
+              <div class="etb-name">Ethiopian Birr</div>
+              <div class="etb-sub">Base Currency</div>
+            </div>
+            <div class="etb-orbits">
+              <div class="orbit orbit-1">
+                <span class="material-icons-round orbit-icon">attach_money</span>
+              </div>
+              <div class="orbit orbit-2">
+                <span class="material-icons-round orbit-icon">euro</span>
+              </div>
+              <div class="orbit orbit-3">
+                <span class="material-icons-round orbit-icon">currency_pound</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  ABOUT STRIP  -->
+  <section class="about-strip" id="about">
+    <div class="wrap">
+      <div class="strip-grid">
+        <div class="strip-item">
+          <div class="strip-icon">
+            <span class="material-icons-round">bolt</span>
+          </div>
+          <div>
+            <div class="strip-title">Always Fresh, Never Stale</div>
+            <div class="strip-desc">Rates are pulled from live financial APIs every single day, so the number you see is the number that matters — not yesterday's guess.</div>
+          </div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-icon">
+            <span class="material-icons-round">language</span>
+          </div>
+          <div>
+            <div class="strip-title">11 Currencies, One Place</div>
+            <div class="strip-desc">The Ethiopian Birr measured against the US Dollar, Euro, British Pound, Yen, Yuan, and six more — every major market, side by side.</div>
+          </div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-icon">
+            <span class="material-icons-round">swap_horiz</span>
+          </div>
+          <div>
+            <div class="strip-title">Convert Any Direction</div>
+            <div class="strip-desc">Dollar to Dirham? Pound to Rupee? Every combination works. Our engine handles all cross-currency paths through a single smart calculation.</div>
+          </div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-icon">
+            <span class="material-icons-round">verified_user</span>
+          </div>
+          <div>
+            <div class="strip-title">Built on Solid Ground</div>
+            <div class="strip-desc">Powered by a NestJS backend, MongoDB persistence, and automated daily cron jobs — engineered for reliability around the clock.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN DASHBOARD -->
+  <main class="wrap dashboard" id="converter">
+
+    <!-- CONVERTER -->
+    <section class="card converter-card">
+      <div class="card-header">
+        <div>
+          <div class="card-tag">instant conversion</div>
+          <h2 class="card-title">Smart Currency Converter</h2>
+          <p class="card-desc">
+            Type any amount, pick your currencies, and hit convert. We fetch today's
+            verified rate from our live database and return a precise result in
+            under a second — no guesswork, no outdated figures.
+          </p>
+        </div>
+        <div class="card-icon-lg">
+          <span class="material-icons-round">currency_exchange</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="amount">
+            <span class="material-icons-round label-icon">pin</span>
+            Amount to Convert
+          </label>
+          <input type="number" id="amount" value="1" min="0" step="any" placeholder="0.00"/>
+        </div>
+      </div>
+
+      <div class="swap-row">
+        <div class="form-group">
+          <label for="fromCurrency">
+            <span class="material-icons-round label-icon">arrow_upward</span>
+            Convert From
+          </label>
+          <div class="select-wrap">
+            <span class="material-icons-round select-prefix-icon" id="fromIcon">payments</span>
+            <select id="fromCurrency"></select>
+          </div>
+        </div>
+        <button class="swap-btn" id="swapBtn" title="Swap currencies">
+          <span class="material-icons-round">swap_vert</span>
+        </button>
+        <div class="form-group">
+          <label for="toCurrency">
+            <span class="material-icons-round label-icon">arrow_downward</span>
+            Convert To
+          </label>
+          <div class="select-wrap">
+            <span class="material-icons-round select-prefix-icon" id="toIcon">payments</span>
+            <select id="toCurrency"></select>
+          </div>
+        </div>
+      </div>
+
+      <button class="convert-btn" id="convertBtn">
+        <span class="material-icons-round" id="convertIcon">calculate</span>
+        <span id="convertBtnText">Get Exchange Rate</span>
+        <span class="material-icons-round spin-icon" id="convertSpinner" style="display:none">autorenew</span>
+      </button>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-empty">
+          <span class="material-icons-round result-empty-icon">info</span>
+          Enter an amount above and press <strong>Get Exchange Rate</strong> to see the result.
+        </div>
+      </div>
+    </section>
+
+    <!-- RATES TABLE -->
+    <section class="card rates-card" id="rates">
+      <div class="card-header">
+        <div>
+          <div class="card-tag">// daily market rates</div>
+          <h2 class="card-title">Today's Live Exchange Rates</h2>
+          <p class="card-desc">
+            Every figure below shows how far one Ethiopian Birr stretches in a given
+            currency today. Rates are sourced from verified financial data providers,
+            stored once daily, and served with zero markup — what you see is the
+            true market rate.
+          </p>
+        </div>
+        <button class="refresh-btn" id="refreshBtn" title="Refresh rates">
+          <span class="material-icons-round">refresh</span>
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="rates-table">
+          <thead>
+            <tr>
+              <th>Country &amp; Currency</th>
+              <th>Code</th>
+              <th class="align-right">1 ETB =</th>
+            </tr>
+          </thead>
+          <tbody id="ratesBody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-footer" id="tableFooter">
+        <span id="rateDate" class="date-with-icon">
+          <span class="material-icons-round" style="font-size:.9rem;vertical-align:middle;margin-right:4px;">calendar_today</span>
+          —
+        </span>
+        <span class="footer-id" id="rateId"></span>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="card stats-card">
+      <div class="card-header">
+        <div>
+          <div class="card-tag">// at a glance</div>
+          <h2 class="card-title">Most-Watched Rate Pairs</h2>
+          <p class="card-desc">
+            The four currency pairs our users track most — USD, EUR, GBP, and AED —
+            displayed front and centre so you can read the market at a single glance
+            without scrolling through the full table.
+          </p>
+        </div>
+        <div class="card-icon-lg">
+          <span class="material-icons-round">leaderboard</span>
+        </div>
+      </div>
+      <div class="stats-grid" id="statsGrid">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!--FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="material-icons-round footer-logo-icon">currency_exchange</span>
+          Birr<em>Convert</em>
+        </div>
+        <p class="footer-text">
+          Your daily window into the Ethiopian Birr's place in the global economy.
+          Rates sourced from verified financial data providers and refreshed every 24 hours.
+          Built for clarity, trusted for accuracy.
+        </p>
+        <p class="footer-copy">© 2025 BirrConvert · Powered by NestJS &amp; MongoDB · </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
