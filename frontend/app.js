@@ -2,7 +2,7 @@
 'use strict';
 
 // CONFIG 
-const API_BASE    = 'https://exchange-rate-mg5x.onrender.com';
+const API_BASE    = 'https://exchange-rate-mg5x.onrender.com/exchange-rate';
 const CONVERT_URL = `${API_BASE}/convert-rate`;
 const TODAY_URL   = `${API_BASE}/today-rate`;
 
