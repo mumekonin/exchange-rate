@@ -1,16 +1,12 @@
-/* ═══════════════════════════════════════════════════
-   BirrConvert — app.js
-   ═══════════════════════════════════════════════════ */
-
+// BirrConvert — app.js
 'use strict';
 
-// ── CONFIG ────────────────────────────────────────
-const API_BASE    = 'http://localhost:3000/exchange-rate';
+// CONFIG 
+const API_BASE    = 'https://exchange-rate-mg5x.onrender.com';
 const CONVERT_URL = `${API_BASE}/convert-rate`;
 const TODAY_URL   = `${API_BASE}/today-rate`;
 
-// ── CURRENCY DATA ─────────────────────────────────
-// icon: Google Material Icons name used for the currency flag circle
+// CURRENCY DATA 
 const CURRENCIES = {
   ETB: { name: 'Ethiopian Birr',    country: 'Ethiopia',       icon: 'account_balance',  rateKey: 'etbRate' },
   USD: { name: 'US Dollar',         country: 'United States',  icon: 'attach_money',     rateKey: 'usdRate' },
@@ -36,7 +32,7 @@ const STAT_ICONS = {
   AED: 'monetization_on',
 };
 
-// ── DOM REFS ──────────────────────────────────────
+// DOM REFS 
 const themeBtn       = document.getElementById('themeBtn');
 const iconMoon       = document.getElementById('iconMoon');
 const iconSun        = document.getElementById('iconSun');
@@ -58,7 +54,7 @@ const rateDate       = document.getElementById('rateDate');
 const rateId         = document.getElementById('rateId');
 const toastEl        = document.getElementById('toast');
 
-// ── THEME ─────────────────────────────────────────
+// THEME 
 let theme = localStorage.getItem('birrconvert-theme') || 'dark';
 applyTheme(theme);
 
@@ -74,7 +70,7 @@ function applyTheme(t) {
   iconSun.style.display  = t === 'light' ? 'block' : 'none';
 }
 
-// ── TOAST ─────────────────────────────────────────
+// TOAST 
 let toastTimer = null;
 function showToast(msg, type = 'success') {
   const icon = type === 'success' ? 'check_circle' : 'error';
@@ -84,7 +80,7 @@ function showToast(msg, type = 'success') {
   toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3800);
 }
 
-// ── POPULATE SELECTS ──────────────────────────────
+// POPULATE SELECTS 
 function buildSelects() {
   [fromSelect, toSelect].forEach((sel, idx) => {
     sel.innerHTML = '';
@@ -109,7 +105,7 @@ function updateIconDisplay() {
 fromSelect.addEventListener('change', updateIconDisplay);
 toSelect.addEventListener('change',   updateIconDisplay);
 
-// ── SWAP ──────────────────────────────────────────
+//  SWAP 
 swapBtn.addEventListener('click', () => {
   const tmp = fromSelect.value;
   fromSelect.value = toSelect.value;
@@ -117,7 +113,7 @@ swapBtn.addEventListener('click', () => {
   updateIconDisplay();
 });
 
-// ── CONVERT ───────────────────────────────────────
+// CONVERT 
 convertBtn.addEventListener('click', doConvert);
 amountInput.addEventListener('keydown', e => { if (e.key === 'Enter') doConvert(); });
 
@@ -214,7 +210,7 @@ function formatAmount(val, code) {
   return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
 }
 
-// ── FETCH TODAY'S RATES ───────────────────────────
+// FETCH TODAY'S RATES 
 refreshBtn.addEventListener('click', fetchTodayRates);
 
 async function fetchTodayRates() {
@@ -240,7 +236,7 @@ async function fetchTodayRates() {
   }
 }
 
-// ── RENDER RATES TABLE ────────────────────────────
+// RENDER RATES TABLE 
 function renderSkeletonRows() {
   const skRow = () => `
     <tr>
@@ -299,7 +295,7 @@ function renderRatesTable(data) {
   ratesBody.innerHTML = rows.join('');
 }
 
-// ── RENDER STATS ──────────────────────────────────
+// RENDER STATS 
 function renderSkeletonStats() {
   statsGrid.innerHTML = STAT_KEYS.map(() => `
     <div class="stat-item">
@@ -337,7 +333,7 @@ function renderStats(data) {
   }).join('');
 }
 
-// ── DATE BAR ──────────────────────────────────────
+// DATE BAR 
 function renderDateBar(data) {
   const dateSpan = document.getElementById('rateDate');
   if (data.exchangeDate) {
@@ -358,6 +354,6 @@ function renderDateBar(data) {
   }
 }
 
-// ── INIT ──────────────────────────────────────────
+// INIT 
 buildSelects();
 fetchTodayRates();

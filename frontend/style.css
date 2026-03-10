@@ -1,8 +1,3 @@
-/* ═══════════════════════════════════════════════════
-   FXPro Dashboard — style.css  (v2 — refined palette)
-   ═══════════════════════════════════════════════════ */
-
-/* ── TOKENS ─────────────────────────────────────── */
 :root {
   --accent: #f59e0b;
   --accent-dim: rgba(245, 158, 11, .1);
@@ -61,7 +56,6 @@
   --shadow-lg: 0 20px 60px rgba(0, 0, 0, .13);
 }
 
-/* ── RESET ───────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -93,8 +87,6 @@ a {
 button {
   font-family: var(--font-body);
 }
-
-/* ── BACKGROUND — soft radial glow only, NO grid ── */
 body::before {
   content: '';
   position: fixed;
@@ -106,7 +98,6 @@ body::before {
     radial-gradient(ellipse 50% 50% at -10% 80%, rgba(245, 158, 11, .07) 0%, transparent 60%);
 }
 
-/* ── LAYOUT ──────────────────────────────────────── */
 .wrap {
   position: relative;
   z-index: 1;
@@ -115,9 +106,7 @@ body::before {
   padding: 0 28px;
 }
 
-/* ═══════════════════════════════════════════════════
-   HEADER
-   ═══════════════════════════════════════════════════ */
+/*HEADER */
 header {
   position: sticky;
   top: 0;
@@ -254,9 +243,7 @@ header {
   transform: scale(1.08);
 }
 
-/* ═══════════════════════════════════════════════════
-   HERO
-   ═══════════════════════════════════════════════════ */
+/*HERO*/
 .hero {
   padding: 80px 0 64px;
   overflow: hidden;
@@ -460,9 +447,7 @@ header {
   }
 }
 
-/* ═══════════════════════════════════════════════════
-   ABOUT STRIP
-   ═══════════════════════════════════════════════════ */
+/*ABOUT STRIP*/
 .about-strip {
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
@@ -507,9 +492,7 @@ header {
   line-height: 1.65;
 }
 
-/* ═══════════════════════════════════════════════════
-   DASHBOARD
-   ═══════════════════════════════════════════════════ */
+/*DASHBOARD */
 .dashboard {
   display: grid;
   grid-template-columns: 420px 1fr;
@@ -517,8 +500,6 @@ header {
   gap: 24px;
   padding: 52px 28px 80px;
 }
-
-/* ── CARD BASE ────────────────────────────────────── */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -619,9 +600,7 @@ header {
   grid-row: 2;
 }
 
-/* ═══════════════════════════════════════════════════
-   CONVERTER FORM
-   ═══════════════════════════════════════════════════ */
+/* CONVERTER FORM*/
 .form-row {
   margin-bottom: 20px;
 }
@@ -876,9 +855,7 @@ select:focus {
   }
 }
 
-/* ═══════════════════════════════════════════════════
-   RATES TABLE
-   ═══════════════════════════════════════════════════ */
+/* RATES TABLE */
 .refresh-btn {
   width: 38px;
   height: 38px;
@@ -1023,9 +1000,7 @@ select:focus {
   color: var(--text-mute);
 }
 
-/* ═══════════════════════════════════════════════════
-   STATS
-   ═══════════════════════════════════════════════════ */
+/* STATS*/
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1075,9 +1050,7 @@ select:focus {
   margin-top: 4px;
 }
 
-/* ═══════════════════════════════════════════════════
-   TOAST
-   ═══════════════════════════════════════════════════ */
+/* TOAST*/
 .toast {
   position: fixed;
   bottom: 28px;
@@ -1114,9 +1087,7 @@ select:focus {
   color: var(--danger);
 }
 
-/* ═══════════════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════════════ */
+/*FOOTER */
 footer {
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
@@ -1154,9 +1125,7 @@ footer {
   color: var(--text-mute);
 }
 
-/* ═══════════════════════════════════════════════════
-   SCROLLBAR
-   ═══════════════════════════════════════════════════ */
+/*SCROLLBAR*/
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -1176,7 +1145,7 @@ footer {
 }
 
 
-/* ── MATERIAL ICON UTILITIES ─────────────────────── */
+/*MATERIAL ICON UTILITIES  */
 .material-icons-round {
   font-family: 'Material Icons Round';
   font-weight: normal;
@@ -1278,9 +1247,7 @@ footer {
   font-size: 1.05rem !important;
 }
 
-/* ═══════════════════════════════════════════════════
-   MEDIA QUERIES
-   ═══════════════════════════════════════════════════ */
+/*MEDIA QUERIES */
 @media (max-width: 1100px) {
   .dashboard {
     grid-template-columns: 380px 1fr;
